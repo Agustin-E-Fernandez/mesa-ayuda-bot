@@ -5,10 +5,11 @@
 ---
 
 ## Descripción
-Simulador de chatbot que automatiza el proceso de Mesa de Ayuda 
-Técnica (Soporte IT Nivel 1). El bot recibe el problema del usuario, 
-consulta una base de conocimiento y resuelve automáticamente o 
-deriva a un técnico de Nivel 2.
+Simulador de chatbot que automatiza el proceso de Mesa de Ayuda
+Técnica (Soporte IT Nivel 1). El bot recibe el problema del usuario,
+consulta una base de conocimiento (FAQ) y resuelve automáticamente
+o deriva el caso a un técnico de Nivel 2, registrando todo en una
+base de datos simulada en Excel.
 
 ## Tecnologías utilizadas
 - Python 3.10+
@@ -16,48 +17,60 @@ deriva a un técnico de Nivel 2.
 - Simulación en consola (sin API externa)
 
 ## Estructura del proyecto
+```
 mesa-ayuda-bot/
-
-├── bot.py                        → código principal del bot
-
+├── bot.py                          # código principal del bot
 ├── data/
-
-│   └── base_datos_mesa_ayuda.xlsx → base de datos simulada
-
+│   └── base_datos_mesa_ayuda.xlsx  # base de datos simulada
 └── docs/
+    ├── BPMN_AS-IS_MesaAyuda.png    # diagrama del proceso manual
+    └── BPMN_TO-BE_MesaAyuda.png    # diagrama del proceso con el bot
+```
 
-├── BPMN_AS-IS_MesaAyuda.png  → diagrama proceso manual
+## Diagramas BPMN del proceso
 
-└── BPMN_TO-BE_MesaAyuda.png  → diagrama proceso con bot
+**AS-IS (proceso manual, sin automatizar):**
+
+AS-IS_ Mesa de Ayuda Técnica.drawio
+
+**TO-BE (proceso automatizado con el chatbot):**
+
+Proceso TO-BE_ Chatbot de Mesa de Ayuda Técnica.drawio
 
 ## Cómo ejecutarlo
 1. Instalar Python 3.10 o superior
 2. Instalar la dependencia:
+```
 pip install openpyxl
+```
 3. Clonar el repositorio o descargar los archivos
-4. Ejecutar desde la terminal:
+4. Ejecutar desde la terminal, parado en la carpeta del proyecto:
+```
 python bot.py
+```
 
-## Flujo del proceso
-1. Usuario ingresa legajo y categoría del problema
-2. Bot busca solución en la base de conocimiento (FAQ)
-3. Si encuentra solución → la envía y consulta si se resolvió
-4. Si no encuentra o el usuario dice "no" → genera ticket y deriva
+## Comandos del bot
+| Comando | Acción |
+|---|---|
+| (ninguno) | Al ejecutar `python bot.py`, el bot saluda y pide el legajo directamente |
+| `salir` | Cancela la sesión actual |
+
+## Flujo del proceso (resumen)
+1. Al iniciar, el bot pide el legajo del usuario (no requiere comandos previos)
+2. Usuario indica la categoría del problema (Hardware / Software / Red) y lo describe
+3. El bot busca una solución en la base de conocimiento (FAQ)
+4. Si encuentra solución - la envía y consulta si se resolvió (Gateway 2)
+5. Si no encuentra solución, o el usuario indica que no se resolvió -
+   se genera un ticket y se deriva a un técnico de Nivel 2
+
+Si se ingresa un dato inválido en cualquier paso (legajo, categoría,
+descripción o confirmación), el bot muestra un mensaje de error y
+vuelve a solicitar el mismo dato hasta recibir una respuesta válida.
+
+## Documentación adicional
+Los diagramas BPMN (AS-IS y TO-BE), el diccionario de datos, la
+máquina de estados y las pruebas de estrés están detallados en el
+informe PDF entregado junto con este repositorio.
 
 ## Autor
 Agustín Ezequiel Fernández — Cohorte Marzo 2026
-Paso 5 — Verificar que quedó bien
-Al terminar, tu repositorio tiene que verse así desde la página principal:
-mesa-ayuda-bot/
-├── README.md          ← se ve automáticamente en la página
-├── bot.py
-├── data/
-│   └── base_datos_mesa_ayuda.xlsx
-└── docs/
-    ├── BPMN_AS-IS_MesaAyuda.png
-    └── BPMN_TO-BE_MesaAyuda.png
-
-
-
-
-    
