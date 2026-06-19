@@ -23,14 +23,8 @@ Python 3.10+
 openpyxl (lectura/escritura de Excel)
 Simulación en consola (sin API externa)
 
-Estructura del proyecto
 
-mesa-ayuda-bot/
-├── bot.py                          → código principal del bot
-├── data/
-│   └── base_datos_mesa_ayuda.xlsx  → base de datos simulada
-└── docs/
-    ├── BPMN_AS-IS_MesaAyuda.png    → diagrama del proceso manual
-    └── BPMN_TO-BE_MesaAyuda.png    → diagrama del proceso con el bot
+
+
 
     
