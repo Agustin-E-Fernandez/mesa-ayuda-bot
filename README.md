@@ -31,13 +31,9 @@ mesa-ayuda-bot/
 
 **AS-IS (proceso manual, sin automatizar):**
 
-AS-IS_ Mesa de Ayuda Técnica.drawio
-
 <img width="1002" height="722" alt="AS-IS_ Mesa de Ayuda Técnica drawio" src="https://github.com/user-attachments/assets/67b7f0d7-28a3-4fe9-8922-56a86ef8f4a4" />
 
 **TO-BE (proceso automatizado con el chatbot):**
-
-Proceso TO-BE_ Chatbot de Mesa de Ayuda Técnica.drawio
 
 <img width="1302" height="962" alt="Proceso TO-BE_ Chatbot de Mesa de Ayuda Técnica drawio" src="https://github.com/user-attachments/assets/484b2e44-fa37-49e5-8d4d-10832a30b51a" />
 
