@@ -38,12 +38,6 @@ pip install openpyxl
 4. Ejecutar desde la terminal:
 python bot.py
 
-## Comandos del bot
-| Comando | Acción |
-|---|---|
-| `/start` | Inicia la conversación |
-| `/salir` | Cancela la sesión actual |
-
 ## Flujo del proceso
 1. Usuario ingresa legajo y categoría del problema
 2. Bot busca solución en la base de conocimiento (FAQ)
